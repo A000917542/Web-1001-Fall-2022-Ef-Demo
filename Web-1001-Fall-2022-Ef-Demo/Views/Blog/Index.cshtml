@@ -1,0 +1,28 @@
+﻿@model Blog
+
+@{
+    ViewData["Title"] = "Blog Page";
+}
+
+
+<form method="post">
+    <div>
+        <label asp-for="Title"></label>
+        <input asp-for="Title" />
+    </div>
+    <div>
+        <label asp-for="Description"></label>
+        <input asp-for="Description" />
+    </div>
+    <div>
+        <label asp-for="PrimaryAuthor"></label>
+        <input asp-for="PrimaryAuthor" />
+    </div>
+    <div>
+        <label asp-for="URL"></label>
+        <input asp-for="URL" />
+    </div>
+    <div>
+        <input type="submit" value="Submit" />
+    </div>
+</form>
