@@ -1,6 +1,20 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.EntityFrameworkCore.Sqlite;
+using System.Configuration;
+using Web_1001_Fall_2022_Ef_Demo.Data;
+
+IConfiguration configuration = new ConfigurationBuilder()
+   .AddJsonFile("appsettings.json", true, true)
+   .Build();
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddDbContext<BlogContext>(options => {
+    options.UseSqlite(configuration.GetConnectionString("DefaultConnection"));
+});
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();

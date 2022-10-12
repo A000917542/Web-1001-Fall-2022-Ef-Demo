@@ -4,6 +4,8 @@ namespace Web_1001_Fall_2022_Ef_Demo.Models
 {
     public class Blog
     {
+        public int BlogId { get; set; }
+
         public string Title { get; set; } = String.Empty;
 
         [MaxLength(512)]
