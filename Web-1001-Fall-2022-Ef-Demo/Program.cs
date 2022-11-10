@@ -12,7 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddDbContext<BlogContext>(options => {
-    options.UseSqlite(configuration.GetConnectionString("DefaultConnection"));
+    options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
 });
 
 builder.Services.AddControllersWithViews();

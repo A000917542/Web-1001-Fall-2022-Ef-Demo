@@ -16,6 +16,9 @@ namespace Web_1001_Fall_2022_Ef_Demo.Controllers
 
         public IActionResult Index(Blog pBlog)
         {
+
+            var blog = _db.Blogs.ToList();
+
             if(ModelState.IsValid)
             {
                 _db.Blogs.Add(pBlog);
